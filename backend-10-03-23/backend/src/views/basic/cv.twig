@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Resume of {{name}}</title>
+	<link rel="stylesheet" href="{{meta.root}}/style.css">
+</head>
+<body>
+	
+
+	<aside>
+		<img src="{{picture}}" alt="">
+		<article class="entry">
+			<h3>{{firstname}} {{lastname}}</h3>
+			<p>{{role}}</p>
+		</article>
+		<article class="entry">
+			<h3>Profile</h3>
+			<p>{{short_bio}}</p>
+		</article>
+
+
+		<article class="entry">
+			<h3>Contact</h3>
+			<ul>
+					<li>Phone:<br>{{phone}}</li>
+					<br>
+					<li>Email:<br>{{email}}</li>
+			</ul>
+		</article>
+	</aside>
+
+	<div class="main">
+		<article class="entry">
+			<h3>Security Liscense</h3>
+			<strong>Security Liscense Name</strong><br>
+			<p>Expiry Date: </p><br>
+			<p>Issuing State: </p>
+		</article>
+
+		<article class="entry">
+			<h3>Work experience</h3>
+			<ul>
+				{% for job in experiences %}
+					<li>
+						<strong>{{job.employer}}</strong><br>
+						{{job.duration}}<br>
+						{{job.role}}
+						{{job.jobDescription}}
+					</li>
+				{% endfor %}
+			</ul>
+		</article>
+
+	</div>
+</body>
+</html>
